@@ -6,9 +6,9 @@ import 'package:meetup_flutter_platform_integration/example_slide_C.dart';
 void main() => runApp(MyApp());
 
 const placeholder = 'Flutter Munich';
+const color = Colors.red;
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -67,14 +67,26 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 0,
         title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            IconButton(icon: Icon(Icons.navigate_before), onPressed: prev),
-            Text(placeholder),
-            IconButton(icon: Icon(Icons.navigate_next), onPressed: next),
-          ]
-        ),
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              IconButton(
+                icon: Icon(Icons.navigate_before),
+                onPressed: prev,
+                color: color,
+              ),
+              Text(
+                placeholder,
+                style: TextStyle(color: color),
+              ),
+              IconButton(
+                icon: Icon(Icons.navigate_next),
+                onPressed: next,
+                color: color,
+              ),
+            ]),
       ),
       body: slides[index],
     );
